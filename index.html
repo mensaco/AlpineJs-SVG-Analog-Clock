@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analog Clock</title>
     <script src="/js/alpine.min.js" defer></script>
-    <script>
+</head>
 
-        var time = function () {
-            return {
+<body>
+
+    <div style="height:20rem;">
+        <svg viewBox="0 0 100 100" style="height: 100%;" preserveAspectRatio="none" x-data="{
                 hour: 0,
                 minute: 0,
                 second: 0,
@@ -22,34 +24,26 @@
                         this.second = 6 * t.getSeconds()
                     }, 1000)
                 }
-            }
-        }
-
-
-    </script>
-</head>
-
-<body x-data="time()" x-init="updateTime()">
-
-
-    <div style="padding: 3rem;">
-        <svg height="500" width="500" viewBox="0 0 100 100" preserveAspectRatio="all">
-            <g style="stroke:none;">
-
-                <polygon points="50,50 48,45 50,16 52,45" fill="orange"
-                    :style="{ 'transform-origin': '50%',  transform: `rotate(${hour}deg)` }" />
-                <polygon points="50,50 48,45 50,8 52,45" fill="darkorange"
-                    :style="{ 'transform-origin': '50%',  transform: `rotate(${minute}deg)` }" />
-                <polygon points="50,50 48,45 50,3 52,45" fill="red"
-                    :style="{ 'transform-origin': '50%',  transform: `rotate(${second}deg)` }" />
-
-                <circle cx="50" cy="50" r="49" fill="#0033FF20" stroke="#0033FF60" />
-                <circle cx="50" cy="50" r="3" fill="#FF9900" />
-
-            </g>
-
-        </svg>
+            }" x-init="updateTime()">
+                <g style="stroke:none;">
+    
+                    <polygon points="50,50 48,45 50,16 52,45" fill="orange"
+                        :style="{ 'transform-origin': '50%',  transform: `rotate(${hour}deg)` }" />
+                    <polygon points="50,50 48,45 50,8 52,45" fill="darkorange"
+                        :style="{ 'transform-origin': '50%',  transform: `rotate(${minute}deg)` }" />
+                    <polygon points="50,50 48,45 50,3 52,45" fill="red"
+                        :style="{ 'transform-origin': '50%',  transform: `rotate(${second}deg)` }" />
+    
+                    <circle cx="50" cy="50" r="49" fill="#0033FF20" stroke="#0033FF60" />
+                    <circle cx="50" cy="50" r="3" fill="#FF9900" />
+    
+                </g>
+    
+            </svg>
     </div>
+
+
+            
 
 </body>
 
