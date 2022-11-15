@@ -7,12 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analog Clock</title>
     <script src="/js/alpine.min.js" defer></script>
+    <style>
+        .link-to-github {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+        }
+
+        .clock-container {
+            height:40rem;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div style="height:20rem;">
-        <svg viewBox="0 0 100 100" style="height: 100%;" preserveAspectRatio="none" x-data="{
+    <div class="link-to-github">Code @ <a href="https://github.com/mensaco/AlpineJs-SVG-Analog-Clock" 
+        target="_blank">https://github.com/mensaco/AlpineJs-SVG-Analog-Clock</a>
+    </div>
+
+    <div class="clock-container">
+        <svg viewBox="0 0 100 100" style="height: 100%;" preserveAspectRatio="none" 
+            
+        x-data="{
                 hour: 0,
                 minute: 0,
                 second: 0,
@@ -24,7 +41,9 @@
                         this.second = 6 * t.getSeconds()
                     }, 1000)
                 }
-            }" x-init="updateTime()">
+            }" 
+            
+            x-init="updateTime()">
                 <g style="stroke:none;">
     
                     <polygon points="50,50 48,45 50,16 52,45" fill="orange"
